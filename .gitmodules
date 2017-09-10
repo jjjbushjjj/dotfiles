@@ -1,6 +1,6 @@
 [submodule ".vim/bundle/ansible-vim"]
 	path = .vim/bundle/ansible-vim
-	url = git://github.com/pearofducks/ansible-vim
+	url = git://github.com/pearofducks/ansible-vim.git
 [submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
 	url = git://github.com/jiangmiao/auto-pairs.git
@@ -28,9 +28,6 @@
 [submodule ".vim/bundle/vim-indent-object"]
 	path = .vim/bundle/vim-indent-object
 	url = git://github.com/michaeljsmith/vim-indent-object.git
-[submodule ".vim/bundle/vim-ja"]
-	path = .vim/bundle/vim-ja
-	url = git://github.com/tpope/vim-jdaddy.git
 [submodule ".vim/bundle/vim-jdaddy"]
 	path = .vim/bundle/vim-jdaddy
 	url = git://github.com/tpope/vim-jdaddy.git
