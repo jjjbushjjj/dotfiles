@@ -1,0 +1,5 @@
+#!/bin/bash
+SETTP='MY_PROMPT="$HOSTNAME:$PWD\$ "'
+SETTP="$SETTP;"'MY_TITLE="\[\e]0;$HOSTNAME\a\]"'
+SETTP="$SETTP;"'PS1="$MY_TITLE$MY_PROMPT"'
+ssh -t $1 "export PROMPT_COMMAND='eval '\\''$SETTP'\\'; bash --login"
