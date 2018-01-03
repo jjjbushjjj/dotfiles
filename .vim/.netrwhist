@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/bush/.wireshark'
-let g:netrw_dirhist_2='/Users/bush/ansible/farzoom-reb/ansible/roles/moos-platform/tasks'
-let g:netrw_dirhist_3='/Users/bush/.vim/bundle/vim-ansible-yaml/indent'
