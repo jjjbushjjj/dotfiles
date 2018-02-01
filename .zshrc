@@ -4,7 +4,7 @@
 # promptinit
 # prompt adam1 black
 
-setopt histignorealldups sharehistory
+setopt histignorealldups sharehistory correctall autocd
 
 # Use vi keybindings even if our EDITOR is set to vi
 bindkey -v
@@ -48,10 +48,12 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls --color=auto -l'
+alias la='ls --color=auto -la'
+alias l='ls --color=auto -CF'
 alias v='vim'
+
+alias python=python3
 
 
 . /usr/share/powerline/bindings/zsh/powerline.zsh
