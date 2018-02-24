@@ -53,7 +53,7 @@ alias la='ls --color=auto -la'
 alias l='ls --color=auto -CF'
 alias v='vim'
 
-alias python=python3
+# alias python=python3
 
 
 . /usr/share/powerline/bindings/zsh/powerline.zsh
