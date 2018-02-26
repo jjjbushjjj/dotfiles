@@ -1,6 +1,6 @@
 [submodule ".vim/bundle/ansible-vim"]
 	path = .vim/bundle/ansible-vim
-	url = git://github.com/pearofducks/ansible-vim.git
+	url = https://github.com/pearofducks/ansible-vim.git
 [submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
 	url = git://github.com/jiangmiao/auto-pairs.git
@@ -53,3 +53,6 @@
     path = .vim/bundle/vim-xkbswitch
     url = https://github.com/lyokha/vim-xkbswitch.git
 
+[submodule ".vim/bundle/ultisnips"]
+	path = .vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
