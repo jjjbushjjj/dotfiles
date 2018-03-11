@@ -6,6 +6,9 @@ syntax enable
 execute pathogen#infect()
 filetype plugin indent on
 
+" Disable netrwhist
+let g:netrw_dirhistmax=0
+
 colorscheme palenight
 " color dracula
 " Set separator
