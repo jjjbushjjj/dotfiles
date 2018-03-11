@@ -1,5 +1,5 @@
-set t_Co=256
-"set termguicolors
+" set t_Co=256
+set termguicolors
 set background=dark
 syntax enable
 "colorscheme molokai
@@ -43,7 +43,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 " highlight brackets
 set showmatch
 " tabs with
-set ts=4 sts=4 sw=4 expandtab
+set ts=2 sts=2 sw=2 expandtab
 set cursorline
 
 
