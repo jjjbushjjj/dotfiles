@@ -93,3 +93,9 @@ let g:syntastic_quiet_messages = { "type": "style" }
 
 "colorscheme nova
 let g:XkbSwitchEnabled = 1
+
+" ansible-vim
+" au BufRead,BufNewFile *.yml set filetype=ansible
+let g:ansible_unindent_after_newline = 1
+let g:ansible_attribute_highlight = "ob"
+let g:ansible_name_highlight = 'd'
