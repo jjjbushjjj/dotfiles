@@ -43,9 +43,9 @@
 [submodule ".vim/bundle/dracula-theme"]
 	path = .vim/bundle/dracula-theme
 	url = https://github.com/dracula/vim.git
-[submodule ".vim/bundle/palenight-theme"]
-	path = .vim/bundle/palenight-theme
-	url = https://github.com/drewtempelmeyer/palenight.vim.git
+; [submodule ".vim/bundle/palenight-theme"]
+; 	path = .vim/bundle/palenight-theme
+; 	url = https://github.com/drewtempelmeyer/palenight.vim.git
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git

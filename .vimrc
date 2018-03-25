@@ -96,3 +96,5 @@ let g:syntastic_quiet_messages = { "type": "style" }
 
 "colorscheme nova
 let g:XkbSwitchEnabled = 1
+" vimdiff colors
+highlight! link DiffText MatchParen

@@ -1,8 +1,9 @@
 # Set up the prompt
 
-# autoload -Uz promptinit
-# promptinit
-# prompt adam1 black
+autoload -Uz promptinit
+promptinit
+# must be at /usr/share/zsh/functions/Prompts
+prompt my_adam2 black
 
 setopt histignorealldups sharehistory correctall autocd
 
@@ -56,5 +57,5 @@ alias v='vim'
 # alias python=python3
 
 
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+# . /usr/share/powerline/bindings/zsh/powerline.zsh
 . /usr/local/bin/virtualenvwrapper.sh
