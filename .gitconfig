@@ -1,0 +1,19 @@
+[user]
+	email = jjjbushjjj@gmail.com
+	name = abushuev
+[push]
+	default = matching
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+	keepBackup = false
+[core]
+	editor = vim
