@@ -48,10 +48,14 @@ prompt_my_adam2_setup () {
       prompt_gfx_hyphen=$'\xc4'
     fi
   else
-    prompt_gfx_tlc='.'
-    prompt_gfx_mlc='|'
-    prompt_gfx_blc='\`'
-    prompt_gfx_hyphen='-'
+    # prompt_gfx_tlc='.'
+    # prompt_gfx_mlc='|'
+    # prompt_gfx_blc='\`'
+    # prompt_gfx_hyphen='-'
+    prompt_gfx_tlc="┌"
+    prompt_gfx_mlc="├"
+    prompt_gfx_blc="└"
+    prompt_gfx_hyphen="─"
   fi
 
   # Colour scheme
@@ -77,7 +81,7 @@ prompt_my_adam2_setup () {
 
   prompt_line_2="$prompt_gfx_bbox${prompt_gfx_hyphen}%B%F{white}"
 
-  prompt_char="%(!.#.>)"
+  prompt_char="%(!.#.›)"
 
   prompt_opts=(cr subst percent)
 
