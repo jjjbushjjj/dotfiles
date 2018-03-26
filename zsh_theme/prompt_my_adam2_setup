@@ -25,8 +25,8 @@ prompt_my_adam2_setup () {
   zstyle ':vcs_info:*' check-for-changes true
   zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
   zstyle ':vcs_info:*' unstagedstr '%F{yellow}●%f'
-  zstyle ':vcs_info:*' formats '-[%F{cyan}%b%c%u%f]'
-  zstyle ':vcs_info:*' actionformats " - [%b%c%u|%F{cyan}%a%f]"
+  zstyle ':vcs_info:*' formats '[%F{cyan}%b%c%u%f]'
+  zstyle ':vcs_info:*' actionformats "[%b%c%u|%F{cyan}%a%f]"
   zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%F{cyan}%b%f|%F{cyan}%r%f'
   zstyle ':vcs_info:git*+set-message:*' hooks git-status
   # vcs_info
