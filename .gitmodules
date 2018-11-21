@@ -46,6 +46,15 @@
 [submodule ".vim/bundle/palenight-theme"]
 	path = .vim/bundle/palenight-theme
 	url = https://github.com/drewtempelmeyer/palenight.vim.git
+[submodule ".vim/bundle/vim-airline-themes"]
+	path = .vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule ".vim/bundle/vim-xkbswitch"]
+    path = .vim/bundle/vim-xkbswitch
+    url = https://github.com/lyokha/vim-xkbswitch.git
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/bundle/html5.vim"]
+	path = .vim/bundle/html5.vim
+	url = https://github.com/othree/html5.vim.git

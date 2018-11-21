@@ -103,3 +103,11 @@ highlight! link DiffText MatchParen
 
 " convert pdf to text
 :command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
+" vimdiff colors
+highlight! link DiffText MatchParen
+
+" ansible-vim
+" au BufRead,BufNewFile *.yml set filetype=ansible
+let g:ansible_unindent_after_newline = 1
+let g:ansible_attribute_highlight = "ob"
+let g:ansible_name_highlight = 'd'
