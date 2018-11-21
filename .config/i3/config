@@ -200,6 +200,7 @@ bar {
 }
 # exec_always --no-startup-id compton
 exec_always --no-startup-id volumeicon
+exec_always --no-startup-id nm-applet
 exec_always --no-startup-id ~/.config/touchpad_settings
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
 # only for vmware guests

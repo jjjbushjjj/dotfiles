@@ -59,3 +59,5 @@ alias v='vim'
 
 # . /usr/share/powerline/bindings/zsh/powerline.zsh
 . /usr/local/bin/virtualenvwrapper.sh
+# Adding path to completion scripts
+fpath=(~/.zsh/completion $fpath)

@@ -9,7 +9,8 @@ filetype plugin indent on
 " Disable netrwhist
 let g:netrw_dirhistmax=0
 
-colorscheme palenight
+" colorscheme palenight
+colorscheme onedark
 " color dracula
 " Set separator
 set fillchars+=vert:│
@@ -56,7 +57,8 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='simple'
+" let g:airline_theme='simple'
+let g:airline_theme='onedark'
 
 " Hard mode breacking arrow keys
 noremap <UP> <NOP>
@@ -98,3 +100,6 @@ let g:syntastic_quiet_messages = { "type": "style" }
 let g:XkbSwitchEnabled = 1
 " vimdiff colors
 highlight! link DiffText MatchParen
+
+" convert pdf to text
+:command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
