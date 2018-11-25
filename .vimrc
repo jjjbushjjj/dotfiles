@@ -85,6 +85,13 @@ if has("autocmd")
   autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
 
+set enc=utf-8     " default encoding utf-8
+set incsearch     " incremental find
+" set hlsearch      " highlight search
+set nobackup      " turn off backup files
+set nowritebackup " only in case you don't want a backup file while editing
+" set noswapfile    " no swap files
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -111,3 +118,6 @@ highlight! link DiffText MatchParen
 let g:ansible_unindent_after_newline = 1
 let g:ansible_attribute_highlight = "ob"
 let g:ansible_name_highlight = 'd'
+
+" Disable choose first funcion/method at autocomplete
+let g:jedi#popup_select_first = 0

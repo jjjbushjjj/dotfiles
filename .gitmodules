@@ -58,3 +58,9 @@
 [submodule ".vim/bundle/html5.vim"]
 	path = .vim/bundle/html5.vim
 	url = https://github.com/othree/html5.vim.git
+[submodule ".vim/bundle/vim-jinja"]
+	path = .vim/bundle/vim-jinja
+	url = https://github.com/mitsuhiko/vim-jinja.git
+[submodule ".vim/bundle/jedi-vim"]
+	path = .vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
