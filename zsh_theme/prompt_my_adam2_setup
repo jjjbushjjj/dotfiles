@@ -74,6 +74,7 @@ prompt_my_adam2_setup () {
   prompt_l_paren="%B%F{black}("
   prompt_r_paren="%B%F{black})"
 
+
   # prompt_user_host="%b%F{$prompt_my_adam2_color3}%n%B%F{$prompt_my_adam2_color3}@%b%F{$prompt_my_adam2_color3}%m"
   prompt_user_host="%b%F{$prompt_my_adam2_color3}%D{%L:%M:%S}%B%F{$prompt_my_adam2_color3}"
 
@@ -94,9 +95,11 @@ prompt_my_adam2_precmd() {
   setopt noxtrace localoptions extendedglob
   local prompt_line_1
 
+  prompt_virtualenv=`virtualenv_info`
+
   prompt_my_adam2_choose_prompt
 
-  PS1="$prompt_line_1$vcs_info_msg_0_$prompt_newline$prompt_line_2%B%F{white}$prompt_char %b%f%k"
+  PS1="$prompt_line_1%B%F{magenta}$prompt_virtualenv%b%f$vcs_info_msg_0_$prompt_newline$prompt_line_2%B%F{white}$prompt_char %b%f%k"
   PS2="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}%_> %b%f%k"
   PS3="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}?# %b%f%k"
   zle_highlight[(r)default:*]="default:fg=$prompt_my_adam2_color4,bold"
@@ -106,10 +109,13 @@ prompt_my_adam2_choose_prompt () {
   local prompt_line_1a_width=${#${(S%%)prompt_line_1a//(\%([KF1]|)\{*\}|\%[Bbkf])}}
   local prompt_line_1b_width=${#${(S%%)prompt_line_1b//(\%([KF1]|)\{*\}|\%[Bbkf])}}
   local prompt_vcs_wight=${#${(S%%)vcs_info_msg_0_//(\%([KF1]|)\{*\}|\%[Bbkf])}}
+  local prompt_virtualenv_wight=${#${(S%%)prompt_virtualenv//(\%([KF1]|)\{*\}|\%[Bbkf])}}
+
 
   local prompt_padding_size=$(( COLUMNS
                                   - prompt_line_1a_width
                                   - prompt_line_1b_width
+                                  - prompt_virtualenv_wight
                                   - prompt_vcs_wight ))
 
   # Try to fit in long path and user@host.

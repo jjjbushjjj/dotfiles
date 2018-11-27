@@ -56,6 +56,10 @@ alias v='vim'
 
 # alias python=python3
 
+# Functions
+function virtualenv_info {
+  [ $VIRTUAL_ENV ] && echo `basename $VIRTUAL_ENV`
+}
 
 # . /usr/share/powerline/bindings/zsh/powerline.zsh
 . /usr/local/bin/virtualenvwrapper.sh
