@@ -113,6 +113,9 @@ highlight! link DiffText MatchParen
 " vimdiff colors
 highlight! link DiffText MatchParen
 
+" Invoke python interpreter by F5
+autocmd FileType python nnoremap <buffer> <F5> :exec '!clear;python' shellescape(@%, 1)<cr>
+
 " ansible-vim
 " au BufRead,BufNewFile *.yml set filetype=ansible
 let g:ansible_unindent_after_newline = 1
@@ -121,4 +124,4 @@ let g:ansible_name_highlight = 'd'
 
 " Disable choose first funcion/method at autocomplete
 let g:jedi#popup_select_first = 0
-let g:jedi#completions_command = "<Tab>"
+let g:jedi#completions_command = "<s-tab>"
