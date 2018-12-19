@@ -63,6 +63,14 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 50 -padding 5 -font "Sy
 # Lock screen
 bindsym Ctrl+Shift+l exec i3lock -i ~/.config/i3/wallpaper1.png
 
+
+# file manager (thunar from xfce4)
+#  launch (xprop) and grap windows class string to add here
+for_window [class="Thunar"] floating enable
+for_window [class="Gpicview"] floating enable
+for_window [class="VirtualBox"] floating enable
+bindsym $mod+Shift+f exec --no-startup-id thunar
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -119,6 +127,8 @@ set $workspace3 "3: Mail "
 set $workspace4 "4: Chats "
 set $workspace5 "5: Music "
 set $workspace6 "6: SSH " 
+
+bindsym --release 0xff61 exec --no-startup-id import /tmp/latest-screenshot.png
 
 assign [class="Audacious"] $workspace5
 assign [class="Firefox"] $workspace1
