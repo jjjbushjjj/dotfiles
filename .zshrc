@@ -1,5 +1,6 @@
 # Set up the prompt
 
+fpath=(~/git/dotfiles/zsh_theme $fpath)
 autoload -Uz promptinit
 promptinit
 # must be at /usr/share/zsh/functions/Prompts
