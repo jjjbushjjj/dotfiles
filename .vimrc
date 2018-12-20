@@ -20,7 +20,7 @@ noremap ; :
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 " cnoremap w!! w !sudo tee > /dev/null %
-" command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " those all from youtube cast
 set path+=**
