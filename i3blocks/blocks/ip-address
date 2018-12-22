@@ -1,6 +1,8 @@
 #!/bin/bash
 
-IP_ADDRESS=$(ip route get 1 | awk '{print $NF;exit}')
+# IP_ADDRESS=$(ip route get 1 | awk '{print $NF;exit}')
+IP_ADDRESS=$(ip route get 1 | grep -Po 'src \K[0-9.]+')
+
 
 if [[ "${IP_ADDRESS}" != "" ]]; then
   echo "${IP_ADDRESS}"
