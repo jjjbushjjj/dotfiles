@@ -61,7 +61,7 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 50 -padding 5 -font "Sy
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 #
 # Lock screen
-bindsym Ctrl+Shift+l exec i3lock -i ~/.config/i3/wallpaper1.png
+bindsym Ctrl+Shift+l exec i3lock -t -i ~/.config/i3/wallpaper1.png
 
 # Remove borders and title
 # bindsym $mod+y border pixel 1

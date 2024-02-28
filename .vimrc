@@ -20,7 +20,7 @@ noremap ; :
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 " cnoremap w!! w !sudo tee > /dev/null %
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+" command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " those all from youtube cast
 set path+=**
@@ -29,7 +29,8 @@ set wildmenu
 " Shortcut to rapidly toggle `set list` <leader> is the \
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+" set listchars=tab:▸\ ,eol:¬
+:set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 
 " Toggle NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
@@ -102,6 +103,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_disabled_filetypes=['java']
 
 "colorscheme nova
 let g:XkbSwitchEnabled = 1
@@ -125,3 +127,25 @@ let g:ansible_name_highlight = 'd'
 " Disable choose first funcion/method at autocomplete
 let g:jedi#popup_select_first = 0
 let g:jedi#completions_command = "<s-tab>"
+
+set rtp+=/home/bushuev/git/fzf
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+nnoremap <silent> <C-p> :FZF<CR>
+"au CursorHoldI * stopinsert
+"play macro in q with space
+:nnoremap <Space> @q
