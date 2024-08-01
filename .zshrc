@@ -6,7 +6,7 @@ promptinit
 # must be at /usr/share/zsh/functions/Prompts
 prompt my_adam2 black
 
-setopt histignorealldups sharehistory correctall autocd
+setopt histignorealldups sharehistory correctall autocd appendhistory sharehistory  hist_ignore_space hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
 
 # Use vi keybindings even if our EDITOR is set to vi
 bindkey -v
@@ -21,13 +21,18 @@ bindkey '^r' history-incremental-search-backward
 bindkey '^ ' autosuggest-accept
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=5000
 HISTFILE=~/.zsh_history
+HISTDUP=erase
+
 
 # Use modern completion system
 autoload -Uz compinit
 compinit
+autoload edit-command-line; zle -N edit-command-line
+
+bindkey -M vicmd v edit-command-line
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -57,9 +62,11 @@ alias la='ls --color=auto -la'
 alias l='ls --color=auto -CF'
 #alias v='vim'
 alias v='nvim'
+alias vo='nvim $(fzf -m --preview="cat {}")'
 alias k='kubectl'
 alias wk='watch kubectl'
 alias lk='kubectl logs -f'
+alias ycs3='aws s3 --endpoint-url=https://storage.yandexcloud.net'
 
 # alias python=python3
 
@@ -188,6 +195,9 @@ if [ -f '/home/bushuev/yandex-cloud/path.bash.inc' ]; then source '/home/bushuev
 if [ -f '/home/bushuev/yandex-cloud/completion.zsh.inc' ]; then source '/home/bushuev/yandex-cloud/completion.zsh.inc'; fi
 source <(kubectl completion zsh)
 
+# operator-sdk completion
+source <(operator-sdk completion zsh)
+
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
@@ -227,3 +237,4 @@ complete -o nospace -C /usr/bin/packer packer
 
 # autosuggestions in cmd
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$HOME/.cargo/env"
