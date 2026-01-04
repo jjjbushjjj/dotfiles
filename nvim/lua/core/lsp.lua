@@ -1,6 +1,7 @@
 vim.lsp.enable({
   "gopls",
-  "lua_ls"
+  "lua_ls",
+  "yamlls"
 })
 
 -- Fix global warnings with indefined vim in lua files
