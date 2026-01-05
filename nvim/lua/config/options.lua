@@ -1,3 +1,6 @@
+-- remove startup screen
+vim.opt.shortmess:append("I")
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false

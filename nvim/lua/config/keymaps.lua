@@ -27,3 +27,5 @@ vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[S]earch [R]esume' }
 vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>yt', ':YAMLTelescope<CR>', { desc = '[] yaml telescope' })
+-- Gitsigns
+vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle git [B]lame' })

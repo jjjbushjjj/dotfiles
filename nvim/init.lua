@@ -21,11 +21,12 @@ vim.pack.add({
     },
   },
 { src = 'https://github.com/rafamadriz/friendly-snippets' },
-{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+
 -- Default completion for neovim is omnicomplete
 -- Main reason for this to exist, is that it could combine multipy sources for completions lsp,snippets,etc
 { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("*") },
 { src = "https://github.com/mason-org/mason.nvim" },
+{ src = "https://github.com/nvim-mini/mini.nvim" },
 
 })
 
@@ -49,6 +50,5 @@ require("core.lsp")
 -- require("core.autocompletion")
 require("blink.cmp").setup() --Some mistery here this thing needs to be setup explicity. To work properly
 require("mason").setup() --Some mistery here this thing needs to be setup explicity. To work properly
+require("mini.surround").setup()
 vim.cmd("colorscheme vague")
-
-
