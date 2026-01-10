@@ -28,9 +28,11 @@ vim.opt.backup = false -- Don't create backups
 vim.opt.writebackup = false
 vim.opt.swapfile = false
 vim.opt.undofile = true
- 
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+-- Split window with all searches
+vim.opt.inccommand = "split"
 
 -- Diagnostic rounded border window
 vim.opt.winborder = "rounded"
