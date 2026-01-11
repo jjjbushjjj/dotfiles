@@ -21,6 +21,7 @@ vim.pack.add({
     },
   },
 { src = 'https://github.com/rafamadriz/friendly-snippets' },
+{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 
 -- Default completion for neovim is omnicomplete
 -- Main reason for this to exist, is that it could combine multipy sources for completions lsp,snippets,etc
