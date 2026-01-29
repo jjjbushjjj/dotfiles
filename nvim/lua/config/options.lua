@@ -36,3 +36,6 @@ vim.opt.inccommand = "split"
 
 -- Diagnostic rounded border window
 vim.opt.winborder = "rounded"
+
+--Russian keys work in normal mode
+vim.opt.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
