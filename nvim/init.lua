@@ -3,12 +3,15 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- Plugins
 vim.pack.add({
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/vague-theme/vague.nvim" },
   { src = 'https://github.com/nvim-telescope/telescope.nvim', tag = '*' },
   { src = 'https://github.com/nvim-lua/plenary.nvim' },
   { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { src = 'https://github.com/nvim-pack/nvim-spectre' },
   { src = 'https://github.com/numToStr/Comment.nvim' },
+  { src = 'https://github.com/sindrets/diffview.nvim' },
+  { src = 'https://github.com/NeogitOrg/neogit' },
   { src = 'https://github.com/lewis6991/gitsigns.nvim',
     opts = {
       signs = {
