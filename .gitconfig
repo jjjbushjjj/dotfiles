@@ -1,19 +1,19 @@
-[user]
-	email = jjjbushjjj@gmail.com
-	name = abushuev
-[push]
-	default = matching
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
-[alias]
-	d = difftool
-[merge]
-	tool = vimdiff
-	conflictstyle = diff3
-[mergetool]
-	prompt = false
-	keepBackup = false
 [core]
-	editor = vim
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  dark = true
+[merge]
+  tool = nvimdiff
+
+[user]
+	email =
+	name =
+[alias]
+  gdc = !git diff --name-only --relative --diff-filter=d -z | xargs -0 batcat --diff
+
+  
+[pull]
+	rebase = false

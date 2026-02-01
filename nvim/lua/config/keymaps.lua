@@ -31,3 +31,6 @@ vim.keymap.set('n', '<leader>yt', ':YAMLTelescope<CR>', { desc = '[] yaml telesc
 vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle git [B]lame' })
 -- LazyGit
 vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<CR>', { desc = 'Toggle LazyGit [G]lame' })
+-- Oil
+vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Toggle LazyGit [G]lame' })
+
