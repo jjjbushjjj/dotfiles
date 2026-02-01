@@ -29,3 +29,5 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[ ] Find existing b
 vim.keymap.set('n', '<leader>yt', ':YAMLTelescope<CR>', { desc = '[] yaml telescope' })
 -- Gitsigns
 vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle git [B]lame' })
+-- LazyGit
+vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<CR>', { desc = 'Toggle LazyGit [G]lame' })

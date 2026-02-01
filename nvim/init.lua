@@ -31,6 +31,7 @@ vim.pack.add({
 { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("*") },
 { src = "https://github.com/mason-org/mason.nvim" },
 { src = "https://github.com/nvim-mini/mini.nvim" },
+{ src = "https://github.com/kdheepak/lazygit.nvim" },
 
 })
 
