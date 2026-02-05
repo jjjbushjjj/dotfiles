@@ -57,6 +57,26 @@ require("core.lsp")
 require("blink.cmp").setup() --Some mistery here this thing needs to be setup explicity. To work properly
 require("mason").setup() --Some mistery here this thing needs to be setup explicity. To work properly
 require("mini.surround").setup()
+require("telescope").setup({
+  defaults = {
+    file_ignore_patterns = { "^.git" },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden"
+    }
+  },
+  pickers = {
+    find_files = {
+      hidden = true
+    }
+  }
+})
 require("oil").setup({
   view_options = {
     -- Show files and directories that start with "."
