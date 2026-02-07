@@ -31,6 +31,7 @@ vim.pack.add({
 { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("*") },
 { src = "https://github.com/mason-org/mason.nvim" },
 { src = "https://github.com/nvim-mini/mini.nvim" },
+{ src = "https://github.com/nvim-mini/mini.statusline" },
 { src = "https://github.com/kdheepak/lazygit.nvim" },
 { src = "https://github.com/stevearc/oil.nvim.git" },
 
@@ -54,9 +55,10 @@ require("config.autocmds")
 require("core.lsp")
 -- Unused because we use blink.cmp below for auto completions
 -- require("core.autocompletion")
-require("blink.cmp").setup() --Some mistery here this thing needs to be setup explicity. To work properly
-require("mason").setup() --Some mistery here this thing needs to be setup explicity. To work properly
+require("blink.cmp").setup()
+require("mason").setup()
 require("mini.surround").setup()
+require("mini.statusline").setup()
 require("telescope").setup({
   defaults = {
     file_ignore_patterns = { "^.git" },
