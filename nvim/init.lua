@@ -55,34 +55,8 @@ require("config.autocmds")
 require("core.lsp")
 -- Unused because we use blink.cmp below for auto completions
 -- require("core.autocompletion")
-require("blink.cmp").setup()
-require("mason").setup()
-require("mini.surround").setup()
-require("mini.statusline").setup()
-require("telescope").setup({
-  defaults = {
-    file_ignore_patterns = { "^.git" },
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--hidden"
-    }
-  },
-  pickers = {
-    find_files = {
-      hidden = true
-    }
-  }
-})
-require("oil").setup({
-  view_options = {
-    -- Show files and directories that start with "."
-    show_hidden = true,
-  }
-})
+
+-- Here where all setup functions for plugins are
+require("plugins")
+
 vim.cmd("colorscheme vague")

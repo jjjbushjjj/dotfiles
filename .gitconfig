@@ -1,15 +1,21 @@
 [core]
   pager = delta
+
+[include]
+  path = ~/.config/delta/themes.gitconfig
 [interactive]
   diffFilter = delta --color-only
 [delta]
+  features = arctic-fox
   navigate = true
   dark = true
+  side-by-side = true
+  paging = never
 [merge]
-  tool = nvimdiff
+   tool = nvimdiff
 
 [user]
-	email =
+	email = 
 	name =
 [alias]
   gdc = !git diff --name-only --relative --diff-filter=d -z | xargs -0 batcat --diff
@@ -17,3 +23,5 @@
   
 [pull]
 	rebase = false
+[mergetool]
+	keepBackup = false
