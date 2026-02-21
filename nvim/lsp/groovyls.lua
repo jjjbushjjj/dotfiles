@@ -23,7 +23,8 @@ return {
   cmd = {
     'java',
     '-jar',
-    'groovy-language-server-all.jar',
+    -- 'groovy-language-server-all.jar',
+    Groovy_lspath
   },
   filetypes = { 'groovy' },
   root_markers = { 'Jenkinsfile', '.git' },
