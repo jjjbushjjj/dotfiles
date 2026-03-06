@@ -34,7 +34,7 @@ vim.pack.add({
 { src = "https://github.com/nvim-mini/mini.statusline" },
 { src = "https://github.com/kdheepak/lazygit.nvim" },
 { src = "https://github.com/stevearc/oil.nvim.git" },
-
+{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 })
 
 vim.diagnostic.config ({
