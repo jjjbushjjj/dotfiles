@@ -27,6 +27,7 @@ vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[S]earch [R]esume' }
 vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[B] Find existing buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.git_bcommits, { desc = '[H] Show git history for open file' })
+vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[H] Show makrs' })
 -- Gitsigns
 vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle git [B]lame' })
 -- LazyGit
