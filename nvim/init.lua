@@ -52,6 +52,7 @@ vim.diagnostic.config ({
 require("config.options")
 require("config.keymaps")
 require("config.autocmds")
+require("config.treesitter")
 Groovy_lspath = vim.fn.expand('$HOME/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar')
 require("core.lsp")
 -- Unused because we use blink.cmp below for auto completions
