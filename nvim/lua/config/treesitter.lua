@@ -2,7 +2,7 @@
 local ok, ts = pcall(require, "nvim-treesitter")
 if not ok then return end
 
-local ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "hcl", "yaml", "json" }
+local ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "hcl", "yaml", "json", "rust" }
 
 ts.install(ensure_installed)
 

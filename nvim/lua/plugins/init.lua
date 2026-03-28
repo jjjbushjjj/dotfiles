@@ -4,6 +4,9 @@ require("mini.surround").setup()
 require("mini.statusline").setup()
 require("telescope").setup({
   defaults = {
+    path_display = {
+      "filename_first",
+    },
     file_ignore_patterns = { "^.git" },
     vimgrep_arguments = {
       "rg",

@@ -3,7 +3,8 @@ vim.lsp.enable({
   "lua_ls",
   "yamlls",
   "ansiblels",
-  "groovyls"
+  "groovyls",
+  "rust_analyzer"
 })
 
 -- Fix global warnings with indefined vim in lua files
