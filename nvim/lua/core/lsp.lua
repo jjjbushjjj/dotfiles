@@ -4,7 +4,7 @@ vim.lsp.enable({
   "yamlls",
   "ansiblels",
   "groovyls",
-  "jsonls"
+  "jsonls",
   "rust_analyzer"
 })
 
