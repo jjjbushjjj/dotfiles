@@ -39,3 +39,8 @@ vim.opt.winborder = "rounded"
 
 --Russian keys work in normal mode
 vim.opt.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
+-- Remove bottom status makes clear temimal mode
+vim.opt.showmode = false
+vim.opt.cmdheight = 0
+-- set shell to zsh
+vim.opt.shell = "zsh"

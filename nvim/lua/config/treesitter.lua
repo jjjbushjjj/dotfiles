@@ -1,30 +1,16 @@
--- 1. Подгружаем плагин (если он в pack/vendor/start/...)
-local ok, ts = pcall(require, "nvim-treesitter")
-if not ok then return end
-
-local ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "hcl", "yaml", "json", "rust" }
-
-ts.install(ensure_installed)
-
--- 3. Эмуляция auto_install (установка при открытии нового типа файла)
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("TSAutoInstall", { clear = true }),
-  callback = function()
-    local lang = vim.treesitter.language.get_lang(vim.bo.filetype) or vim.bo.filetype
-    -- Пытаемся запустить Treesitter. Если парсера нет — пробуем установить.
-    local ok_start = pcall(vim.treesitter.start)
-    if not ok_start then
-        -- Если парсера нет, вызываем установку
-        -- (проверка наличия парсера в новых версиях через ts.install)
-        ts.install(lang)
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(ev)
+    local lang = vim.treesitter.language.get_lang(ev.match)
+    local available_langs = require('nvim-treesitter').get_available()
+    local is_available = vim.tbl_contains(available_langs, lang)
+    if is_available then
+      local installed_langs = require('nvim-treesitter').get_installed()
+      local installed = vim.tbl_contains(installed_langs, lang)
+      if not installed then
+        require('nvim-treesitter').install(lang):wait()
+      end
+      vim.treesitter.start()
+      require('nvim-treesitter').indentexpr()
     end
   end,
 })
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-vim.opt.foldtext = "v:lua.MyFoldText()"
-vim.opt.fillchars:append({ fold = " " })
-
-vim.api.nvim_set_hl(0, "Folded", { fg = "#7aa2f7", bg = "#1e222a", italic = true })

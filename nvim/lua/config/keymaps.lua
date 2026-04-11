@@ -34,4 +34,47 @@ vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', 
 vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<CR>', { desc = 'Toggle LazyGit [G]lame' })
 -- Oil
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Toggle LazyGit [G]lame' })
+-- Smart terminal <leader>tt switch between terminlal and buffer form we came
+local term_buf = nil
+local last_buf = nil
 
+local function toggle_terminal()
+  local cur_buf = vim.api.nvim_get_current_buf()
+
+  -- Если мы в терминале — возвращаемся в файл
+  if cur_buf == term_buf then
+    if last_buf and vim.api.nvim_buf_is_valid(last_buf) then
+      vim.api.nvim_set_current_buf(last_buf)
+    else
+      vim.cmd("bp") -- Если некуда, просто прошлый буфер
+    end
+  else
+    -- Если в коде — запоминаем его и идем в терминал
+    last_buf = cur_buf
+    if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+      vim.api.nvim_set_current_buf(term_buf)
+      vim.cmd("startinsert")
+    else
+      -- Создаем новый терминал
+      vim.cmd("enew | term")
+      term_buf = vim.api.nvim_get_current_buf()
+      -- Скроем номера строк для красоты
+      vim.opt_local.number = false
+      vim.opt_local.relativenumber = false
+      vim.cmd("startinsert")
+    end
+  end
+end
+
+-- Назначаем для обычного режима
+vim.keymap.set('n', '<leader>tt', toggle_terminal, { silent = true })
+
+-- Назначаем для режима терминала (используем функцию напрямую, а не строку)
+vim.keymap.set('t', '<leader>tt', function()
+  -- Сначала выходим в нормальный режим, потом вызываем переключение
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, true, true), 'n', false)
+  toggle_terminal()
+end, { silent = true })
+
+-- Exit terminal mode with Esc Esc
+vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
