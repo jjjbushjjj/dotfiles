@@ -5,6 +5,7 @@ vim.lsp.enable({
   "ansiblels",
   "groovyls",
   "jsonls"
+  "rust_analyzer"
 })
 
 -- Fix global warnings with indefined vim in lua files

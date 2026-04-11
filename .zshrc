@@ -26,7 +26,6 @@ SAVEHIST=5000
 HISTFILE=~/.zsh_history
 HISTDUP=erase
 
-
 # Use modern completion system
 autoload -Uz compinit
 compinit
@@ -57,9 +56,12 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls --color=auto -l'
-alias la='ls --color=auto -la'
-alias l='ls --color=auto -CF'
+# alias ll='ls --color=auto -l'
+# alias la='ls --color=auto -la'
+# alias l='ls --color=auto -CF'
+alias l='exa --color=always --group-directories-first --icons' # with headers
+alias la='exa -al --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'  # long format
 #alias v='vim'
 alias v='nvim'
 alias vo='nvim $(fzf -m --preview="cat {}")'
@@ -74,109 +76,15 @@ alias ycs3='aws s3 --endpoint-url=https://storage.yandexcloud.net'
 function virtualenv_info {
   [ $VIRTUAL_ENV ] && echo `basename $VIRTUAL_ENV`
 }
-function deleteEvictedPods() {
-    environments=(
-        argo-rollouts
-        cert-manager
-        default
-        flagsmith
-        foo
-        istio-system
-        keycloak
-        kube-node-lease
-        kube-public
-        kube-system
-        kubernetes-dashboard
-        limitrange
-        logging
-        metallb-system
-        monitoring
-        monitoring2
-        observability
-        redis
-        redis-bitnami
-        redis-ha
-        sentry
-        sonarqube-community
-        testing-a-0
-        testing-a-1
-        testing-a-2
-        testing-a-3
-        testing-a-4
-        testing-a-5
-        testing-a-6
-        testing-app-0
-        testing-app-1
-        testing-biz-0
-        testing-biz-1
-        testing-bs-0
-        testing-cia-1
-        testing-d-0
-        testing-d-1
-        testing-d-2
-        testing-k-0
-        testing-k-1
-        testing-k-2
-        testing-k-3
-        testing-mc-0
-        testing-mc-1
-        testing-mc-2
-        testing-mc-3
-        testing-mi-0
-        testing-mi-1
-        testing-mi-2
-        testing-nobr-0
-        testing-nobr-2
-        testing-p-1
-        testing-p-2
-        testing-p-3
-        testing-pn-0
-        testing-pn-1
-        testing-pn-2
-        testing-pn-3
-        testing-qa
-        testing-qa-1
-        testing-r-0
-        testing-r-1
-        testing-r-2
-        testing-r-3
-        testing-r-4
-        testing-seo-0
-        testing-seo-1
-        testing-seo-2
-        testing-x-0
-        testing-x-1
-        testing-x-2
-        testing-z-0
-        testing-z-1
-        testing-z-2
-        testing-z-3
-        testing-z-4
-        staging
-        stable
-    )
-
-    for environment in "${environments[@]}"
-    do
-        echo "==================================================================================="
-        echo "Removing evicted pods for namespace: \"${environment}\""
-        echo "---------------------------------------------------"
-
-        for each in $(kubectl get pods -n ${environment} | grep Evicted | awk '{print $1}');
-        do
-            kubectl delete pods $each -n ${environment}
-        done
-        echo "==================================================================================="
-        echo "\n"
-    done
-}
 
 # . /usr/share/powerline/bindings/zsh/powerline.zsh
 #. /usr/local/bin/virtualenvwrapper.sh
 # Adding path to completion scripts
 fpath=(~/.zsh/completion $fpath)
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
 path+=('/home/bushuev/.local/bin')
 path+=('/usr/local/go/bin')
 path+=('/home/bushuev/go/bin')
@@ -186,7 +94,7 @@ path+=('/home/bushuev/node-v18.17.0-linux-x64/bin')
 export PATH
 export EDITOR=nvim
 
-export SSH_AUTH_SOCK="$HOME/.ssh/ssh-agent.socket"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 # The next line updates PATH for Yandex Cloud CLI.
 if [ -f '/home/bushuev/yandex-cloud/path.bash.inc' ]; then source '/home/bushuev/yandex-cloud/path.bash.inc'; fi
@@ -236,5 +144,6 @@ complete -o nospace -C /usr/bin/packer packer
 
 
 # autosuggestions in cmd
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source "$HOME/.cargo/env"
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source "$HOME/.cargo/env"
