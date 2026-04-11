@@ -34,6 +34,7 @@ require("telescope").setup({
     }
   }
 })
+require("telescope").load_extension("grapple")
 
 require("oil").setup({
   view_options = {
@@ -41,3 +42,4 @@ require("oil").setup({
     show_hidden = true,
   }
 })
+

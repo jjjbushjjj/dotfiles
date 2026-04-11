@@ -28,6 +28,10 @@ vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[S]earch Recent Fi
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[B] Find existing buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.git_bcommits, { desc = '[H] Show git history for open file' })
 vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[H] Show makrs' })
+
+-- Grapple 
+vim.keymap.set("n", "<leader>fm", require("grapple").open_tags, { desc = "Grapple tags" })
+vim.keymap.set("n", "<leader>mm", require("grapple").toggle, { desc = "Toggle tag" })
 -- Gitsigns
 vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle git [B]lame' })
 -- LazyGit
