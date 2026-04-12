@@ -27,11 +27,20 @@ vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[S]earch [R]esume' }
 vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[B] Find existing buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.git_bcommits, { desc = '[H] Show git history for open file' })
-vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[H] Show makrs' })
+-- vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[H] Show makrs' })
 
--- Grapple 
-vim.keymap.set("n", "<leader>fm", require("grapple").open_tags, { desc = "Grapple tags" })
-vim.keymap.set("n", "<leader>mm", require("grapple").toggle, { desc = "Toggle tag" })
+-- Grapple Show Local marks  
+vim.keymap.set("n", "<leader>fm", require("grapple").open_tags, { desc = "Grapple open local tags" })
+-- Grapple Show Global marks
+vim.keymap.set("n", "<leader>fM", function()
+    require("grapple").open_tags({ scope = "global" })
+end, { desc = "Grapple: Open global tags" })
+-- Grapple Set Local mark
+vim.keymap.set("n", "<leader>mm", require("grapple").toggle, { desc = "Toggle tag local scope" })
+-- Grapple Set Global marks
+vim.keymap.set("n", "<leader>mM", function()
+  require("grapple").toggle({scope = "global"})
+end, { desc = "Toggle tag global scope" })
 -- Gitsigns
 vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle git [B]lame' })
 -- LazyGit
