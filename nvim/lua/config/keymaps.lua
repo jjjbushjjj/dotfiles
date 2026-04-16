@@ -88,7 +88,7 @@ end
 vim.keymap.set('n', '<leader>tt', toggle_terminal, { silent = true })
 
 -- Назначаем для режима терминала (используем функцию напрямую, а не строку)
-vim.keymap.set('t', '<leader>tt', function()
+vim.keymap.set('t', '[b', function()
   -- Сначала выходим в нормальный режим, потом вызываем переключение
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, true, true), 'n', false)
   toggle_terminal()
