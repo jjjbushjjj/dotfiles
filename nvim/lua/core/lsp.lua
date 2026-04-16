@@ -18,3 +18,16 @@ vim.lsp.config("lua_ls", {
     }
   }
 })
+
+-- Turn on auto completion menu to suggest auto-import packages in Golang
+vim.lsp.config("gopls", {
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
+})

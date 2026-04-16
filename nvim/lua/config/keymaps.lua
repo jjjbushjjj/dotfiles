@@ -27,7 +27,12 @@ vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[S]earch [R]esume' }
 vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[B] Find existing buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.git_bcommits, { desc = '[H] Show git history for open file' })
--- vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[H] Show makrs' })
+vim.keymap.set('n', '<leader>gd', require('telescope.builtin').lsp_definitions, { desc = "LSP Definition" })
+
+-- Code actions
+vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, { desc = "LSP Code Actions"})
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to Definition" })
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to Implementation" })
 
 -- Grapple Show Local marks  
 vim.keymap.set("n", "<leader>fm", require("grapple").open_tags, { desc = "Grapple open local tags" })

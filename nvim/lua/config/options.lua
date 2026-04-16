@@ -43,4 +43,4 @@ vim.opt.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGH
 vim.opt.showmode = false
 vim.opt.cmdheight = 0
 -- set shell to zsh
-vim.opt.shell = "zsh"
+vim.opt.shell = "fish"
