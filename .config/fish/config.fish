@@ -3,6 +3,5 @@ if status is-interactive
   abbr -a v nvim
   fzf_key_bindings
   fish_vi_key_bindings
-  bind -k nul accept-autosuggestion
     # Commands to run in interactive sessions can go here
 end

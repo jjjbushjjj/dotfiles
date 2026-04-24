@@ -9,7 +9,7 @@ vim.opt.swapfile = false
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
