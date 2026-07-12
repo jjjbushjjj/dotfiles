@@ -35,8 +35,9 @@ vim.pack.add({
 { src = "https://github.com/kdheepak/lazygit.nvim" },
 { src = "https://github.com/stevearc/oil.nvim.git" },
 { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
-{ src = "https://github.com/cbochs/grapple.nvim" }
-})
+{ src = "https://github.com/cbochs/grapple.nvim" },
+{ src = "https://github.com/stefandtw/quickfix-reflector.vim" },
+} )
 
 vim.diagnostic.config ({
   virtual_lines = false,
