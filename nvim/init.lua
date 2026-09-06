@@ -37,6 +37,7 @@ vim.pack.add({
 { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 { src = "https://github.com/cbochs/grapple.nvim" },
 { src = "https://github.com/stefandtw/quickfix-reflector.vim" },
+{ src = "https://github.com/immanuwell/droast.nvim.git" },
 } )
 
 vim.diagnostic.config ({

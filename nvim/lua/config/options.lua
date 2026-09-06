@@ -3,7 +3,7 @@ vim.opt.shortmess:append("I")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.tabstop = 1
 vim.opt.swapfile = false
 vim.opt.mouse = 'a'
