@@ -21,13 +21,3 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
     end, 50)
   end,
 })
-
--- follow open buffer directory
-vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function()
-    local path = vim.fn.expand("%:p:h")
-    if vim.fn.isdirectory(path) == 1 then
-      vim.api.nvim_set_current_dir(path)
-    end
-  end,
-})
