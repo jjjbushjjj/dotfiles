@@ -79,12 +79,17 @@ require("telescope").setup({
 require("telescope").load_extension("grapple")
 
 require("oil").setup({
+  sync_with_current_directory = false,
+  restore_win_options = false,
   view_options = {
     -- Show files and directories that start with "."
     show_hidden = true,
-    actions = {
-      cd = true,
-    }
+    -- actions = {
+    --   cd = true,
+    -- }
+    is_always_hidden = function(name, bufnr)
+      return false
+    end,
   }
 })
 
