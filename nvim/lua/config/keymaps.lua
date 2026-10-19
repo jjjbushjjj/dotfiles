@@ -52,3 +52,5 @@ vim.keymap.set('n', '<leader>b', '<cmd>Gitsigns toggle_current_line_blame<CR>', 
 vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<CR>', { desc = 'Toggle LazyGit [G]lame' })
 -- Oil
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'Toggle LazyGit [G]lame' })
+-- Rm trailing white spaces
+vim.keymap.set('n', '<leader>tt', [[:%s/\s\+$//e<cr>]])
