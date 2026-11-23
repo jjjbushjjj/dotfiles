@@ -395,9 +395,14 @@ binds {
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+D hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-      Mod+Alt+L hotkey-overlay-title="Lock Screen: Noctalia Lock" {
-        spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"
+    Mod+Alt+L hotkey-overlay-title="Lock Screen: Noctalia Lock" {
+      spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"
     }
+    // Toggle Clipper (use Mod+Shift+V or another free keybind)
+    Mod+Shift+C hotkey-overlay-title="Toggle Clipper" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipper" "toggle";
+    }
+
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
